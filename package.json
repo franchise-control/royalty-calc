@@ -1,0 +1,57 @@
+{
+  "name": "royalty-calc",
+  "version": "1.0.0",
+  "description": "Расчёт роялти во франчайзинговой сети: восемь схем из договоров коммерческой концессии, точная арифметика без плавающей точки, объяснение расчёта.",
+  "keywords": [
+    "royalty",
+    "franchise",
+    "franchising",
+    "роялти",
+    "франшиза",
+    "франчайзинг",
+    "коммерческая-концессия",
+    "decimal",
+    "money"
+  ],
+  "homepage": "https://franchise-control.pro/uchyot-royalti",
+  "bugs": "https://github.com/franchise-control/royalty-calc/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franchise-control/royalty-calc.git"
+  },
+  "license": "MIT",
+  "author": "Franchise Control <info@franchise-control.pro> (https://franchise-control.pro)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
